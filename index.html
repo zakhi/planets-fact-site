@@ -9,7 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="stylesheets/main.css">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <script type="module" src="javascript/nav.js"></script>
+
   <title>Frontend Mentor | Planets fact site</title>
 </head>
 <body>
@@ -17,14 +19,14 @@
     <p class="title">The Planets</p>
     <nav>
       <ul>
-        <li>Mercury</li>
-        <li>Venus</li>
-        <li>Earth</li>
-        <li>Mars</li>
-        <li>Jupiter</li>
-        <li>Saturn</li>
-        <li>Uranus</li>
-        <li>Neptune</li>
+        <li id="mercury">Mercury</li>
+        <li id="venus">Venus</li>
+        <li id="earth">Earth</li>
+        <li id="mars">Mars</li>
+        <li id="jupiter">Jupiter</li>
+        <li id="saturn">Saturn</li>
+        <li id="uranus">Uranus</li>
+        <li id="neptune">Neptune</li>
       </ul>
     </nav>
   </header>
@@ -44,9 +46,9 @@
       </p>
     </div>
     <ul class="tabs">
-      <li><span>01</span> Overview</li>
-      <li><span>02</span> Internal Structure</li>
-      <li><span>03</span> Surface Geology</li>
+      <li id="overview"><span>01</span> Overview</li>
+      <li id="structure"><span>02</span> Internal Structure</li>
+      <li id="geology"><span>03</span> Surface Geology</li>
     </ul>
   </main>
 

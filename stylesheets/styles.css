@@ -1,0 +1,153 @@
+:root {
+  --color-mercury: #419ebb;
+  --color-venus: #eda249;
+  --color-earth: #6f2ed6;
+  --color-mars: #d14c32;
+  --color-jupiter: #d83a34;
+  --color-saturn: #cd5120;
+  --color-uranus: #1ec2a4;
+  --color-neptune: #2d68f0;
+  --color-background: #070724;
+  --color-foreground: white;
+  --color-foreground-10: rgba(255, 255, 255, 0.1);
+  --color-foreground-20: rgba(255, 255, 255, 0.2);
+  --color-foreground-50: rgba(255, 255, 255, 0.5);
+  --color-hover: rgba(216, 216, 216, 0.2);
+  --color-primary: var(--color-mercury);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-weight: 400;
+  color: var(--color-foreground);
+  background: url("../assets/background-stars.svg") var(--color-background);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+}
+
+header {
+  padding: 1em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-foreground-20);
+  position: relative;
+}
+header .title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: -1.05px;
+  justify-content: space-between;
+}
+header nav {
+  cursor: pointer;
+}
+header nav::after {
+  content: "";
+  display: block;
+  background: url("../assets/icon-hamburger.svg") no-repeat center;
+  width: 1.5em;
+  height: 2.25em;
+}
+header nav.open::after {
+  opacity: 25%;
+}
+header nav.open ul {
+  display: block;
+}
+header ul {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  right: 0;
+  padding: 1.5em;
+  background: var(--color-background);
+  height: 100vh;
+  opacity: 1;
+}
+header li {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.67;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding-block: 1.25em;
+  position: relative;
+}
+header li + * {
+  border-top: 1px solid var(--color-foreground-10);
+}
+header li::before {
+  content: "";
+  display: inline-block;
+  vertical-align: text-bottom;
+  border-radius: 50%;
+  background: white;
+  width: 1.333em;
+  height: 1.333em;
+  margin-right: 1.667em;
+}
+header li::after {
+  content: "";
+  display: inline-block;
+  vertical-align: text-bottom;
+  background: url("../assets/icon-chevron.svg") no-repeat center;
+  position: absolute;
+  width: 0.4em;
+  height: 1.333em;
+  right: 0.533em;
+}
+header #mercury::before {
+  background: #def4fc;
+}
+header #venus::before {
+  background: #f7cc7f;
+}
+header #earth::before {
+  background: #545bfe;
+}
+header #mars::before {
+  background: #ff6a45;
+}
+header #jupiter::before {
+  background: #ecad7a;
+}
+header #saturn::before {
+  background: #fccb6b;
+}
+header #uranus::before {
+  background: #65f0d5;
+}
+header #neptune::before {
+  background: #497efa;
+}
+
+/*# sourceMappingURL=styles.css.map */
