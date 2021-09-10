@@ -29,6 +29,7 @@ body {
   font-weight: 400;
   color: var(--color-foreground);
   background: url("../assets/background-stars.svg") var(--color-background);
+  position: relative;
 }
 
 ul {
@@ -56,15 +57,14 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--color-foreground-20);
-  position: relative;
 }
 header .title {
   font-family: "Antonio", sans-serif;
   font-weight: 500;
   font-size: 1.75em;
   text-transform: uppercase;
+  line-height: 1.286;
   letter-spacing: -1.05px;
-  justify-content: space-between;
 }
 header nav {
   cursor: pointer;
@@ -73,6 +73,7 @@ header nav::after {
   content: "";
   display: block;
   background: url("../assets/icon-hamburger.svg") no-repeat center;
+  background-size: contain;
   width: 1.5em;
   height: 2.25em;
 }
@@ -85,13 +86,12 @@ header nav.open ul {
 header ul {
   display: none;
   position: absolute;
-  top: calc(100% + 1px);
+  top: calc(4.375em - 1px);
   left: 0;
   right: 0;
+  bottom: 0;
   padding: 1.5em;
   background: var(--color-background);
-  height: 100vh;
-  opacity: 1;
 }
 header li {
   font-size: 0.9375rem;
