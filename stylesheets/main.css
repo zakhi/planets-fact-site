@@ -1,0 +1,52 @@
+:root {
+  --color-mercury: #419ebb;
+  --color-venus: #eda249;
+  --color-earth: #6f2ed6;
+  --color-mars: #d14c32;
+  --color-jupiter: #d83a34;
+  --color-saturn: #cd5120;
+  --color-uranus: #1ec2a4;
+  --color-neptune: #2d68f0;
+  --color-background: #070724;
+  --color-foreground: white;
+  --color-foreground-20: rgba(255, 255, 255, 0.2);
+  --color-foreground-50: rgba(255, 255, 255, 0.5);
+  --color-hover: rgba(216, 216, 216, 0.2);
+  --color-primary: var(--color-mercury);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-weight: 400;
+  color: var(--color-foreground);
+  background: url("../assets/background-stars.svg") var(--color-background);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=main.css.map */
