@@ -11,7 +11,7 @@ header {
     font-size: 1.75em;
     text-transform: uppercase;
     line-height: 1.286;
-    letter-spacing: -1.05px;
+    letter-spacing: -0.0375em;
   }
 
   nav {
@@ -40,6 +40,7 @@ header {
   ul {
     display: none;
     position: absolute;
+    z-index: 1;
     top: calc(4.375em - 1px);
     left: 0;
     right: 0;
