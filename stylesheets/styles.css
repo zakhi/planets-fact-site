@@ -187,5 +187,24 @@ main .tabs li.selected::after {
   height: 0.444em;
   background: var(--color-primary);
 }
+main figure {
+  width: 19em;
+  height: 19em;
+  margin: 1.5em auto;
+  position: relative;
+  overflow: hidden;
+}
+main figure .image-container {
+  position: absolute;
+  width: max-content;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -50%);
+}
+main figure img {
+  width: 38.4%;
+  margin-left: 25%;
+  transform: translateX(-50%);
+}
 
 /*# sourceMappingURL=styles.css.map */
