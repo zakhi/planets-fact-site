@@ -95,13 +95,16 @@ header li {
   line-height: 1.67;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  padding-block: 1.25em;
   position: relative;
 }
 header li + * {
   border-top: 1px solid var(--color-foreground-10);
 }
-header li::before {
+header li a {
+  display: block;
+  padding-block: 1.25em;
+}
+header li a::before {
   content: "";
   display: inline-block;
   vertical-align: text-bottom;
@@ -111,7 +114,7 @@ header li::before {
   height: 1.333em;
   margin-right: 1.667em;
 }
-header li::after {
+header li a::after {
   content: "";
   display: inline-block;
   vertical-align: text-bottom;
@@ -121,28 +124,28 @@ header li::after {
   height: 1.333em;
   right: 0.533em;
 }
-header #mercury::before {
+header #mercury a::before {
   background: #def4fc;
 }
-header #venus::before {
+header #venus a::before {
   background: #f7cc7f;
 }
-header #earth::before {
+header #earth a::before {
   background: #545bfe;
 }
-header #mars::before {
+header #mars a::before {
   background: #ff6a45;
 }
-header #jupiter::before {
+header #jupiter a::before {
   background: #ecad7a;
 }
-header #saturn::before {
+header #saturn a::before {
   background: #fccb6b;
 }
-header #uranus::before {
+header #uranus a::before {
   background: #65f0d5;
 }
-header #neptune::before {
+header #neptune a::before {
   background: #497efa;
 }
 

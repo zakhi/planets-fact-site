@@ -10,11 +10,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="stylesheets/styles.css">
+  <script type="module" src="javascript/update-data.js"></script>
   <script type="module" src="javascript/nav.js"></script>
+  <script type="module" src="javascript/controls.js"></script>
 
   <title>Frontend Mentor | Planets fact site</title>
 </head>
-<body>
+<body data-planet="mercury" data-tab="overview">
   <header>
     <p class="title">The Planets</p>
     <nav>
@@ -34,19 +36,19 @@
   <main>
     <figure>
       <div class="image-container">
-        <img src="./assets/planet-mercury.svg" alt="The Planet">
+        <img src="./assets/planet-mercury.svg" alt="The Planet" id="planet-image">
       </div>
     </figure>
     <div class="content">
-      <h1>Mercury</h1>
-      <p class="description">
+      <h1 id="planet-name">Mercury</h1>
+      <p id="planet-description" class="description">
         Mercury is the smallest planet in the Solar System and the closest
         to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
         shortest of all the Sun's planets. Mercury is one of four terrestrial
         planets in the Solar System, and is a rocky body like Earth.
       </p>
       <p class="source">
-        Source: <a href="https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure" target="_blank">Wikipedia</a>
+        Source: <a href="https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure" target="_blank" id="planet-link">Wikipedia</a>
       </p>
     </div>
     <ul class="tabs">
@@ -57,19 +59,19 @@
     <ul class="facts">
       <li>
         <p class="title">Rotation Time</p>
-        <p class="value">58.6 Days</p>
+        <p class="value" id="planet-rotation">58.6 Days</p>
       </li>
       <li>
         <p class="title">Revolution Time</p>
-        <p class="value">87.97 Days</p>
+        <p class="value" id="planet-revolution">87.97 Days</p>
       </li>
       <li>
         <p class="title">Radius</p>
-        <p class="value">2,439.7 KM</p>
+        <p class="value" id="planet-radius">2,439.7 KM</p>
       </li>
       <li>
         <p class="title">Average Temp.</p>
-        <p class="value">430°c</p>
+        <p class="value" id="planet-temperature">430°c</p>
       </li>
     </ul>
   </main>

@@ -56,65 +56,69 @@ header {
     line-height: 1.67;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    padding-block: 1.25em;
     position: relative;
 
     & + * {
       border-top: 1px solid var(--color-foreground-10);
     }
 
-    &::before {
-      content: "";
-      display: inline-block;
-      vertical-align: text-bottom;
-      border-radius: 50%;
-      background: white;
-      width: 1.333em;
-      height: 1.333em;
-      margin-right: 1.667em;
-    }
+    a {
+      display: block;
+      padding-block: 1.25em;
 
-    &::after {
-      content: "";
-      display: inline-block;
-      vertical-align: text-bottom;
-      background: url("../assets/icon-chevron.svg") no-repeat center;
-      position: absolute;
-      width: 0.4em;
-      height: 1.333em;
-      right: 0.533em;
+      &::before {
+        content: "";
+        display: inline-block;
+        vertical-align: text-bottom;
+        border-radius: 50%;
+        background: white;
+        width: 1.333em;
+        height: 1.333em;
+        margin-right: 1.667em;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        vertical-align: text-bottom;
+        background: url("../assets/icon-chevron.svg") no-repeat center;
+        position: absolute;
+        width: 0.4em;
+        height: 1.333em;
+        right: 0.533em;
+      }
     }
   }
 
-  #mercury::before {
+  #mercury a::before {
     background: #def4fc;
   }
 
-  #venus::before {
+  #venus a::before {
     background: #f7cc7f;
   }
 
-  #earth::before {
+  #earth a::before {
     background: #545bfe;
   }
 
-  #mars::before {
+  #mars a::before {
     background: #ff6a45;
   }
 
-  #jupiter::before {
+  #jupiter a::before {
     background: #ecad7a;
   }
 
-  #saturn::before {
+  #saturn a::before {
     background: #fccb6b;
   }
 
-  #uranus::before {
+  #uranus a::before {
     background: #65f0d5;
   }
 
-  #neptune::before {
+  #neptune a::before {
     background: #497efa;
   }
 }
