@@ -156,6 +156,7 @@ main .tabs {
   grid-row: 1/2;
 }
 main figure {
+  --geology-image: url("../assets/geology-mercury.png");
   width: 19em;
   height: 19em;
   margin: 1.5em auto;
@@ -173,6 +174,17 @@ main figure img {
   width: 38.4%;
   margin-left: 25%;
   transform: translateX(-50%);
+}
+main figure.geology::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  width: 24.4%;
+  height: 29.8%;
+  margin-left: -12.2%;
+  background: var(--geology-image) no-repeat center;
+  background-size: contain;
 }
 main .content {
   text-align: center;
@@ -221,7 +233,6 @@ main .content .source a::after {
   display: none;
 }
 .tabs li {
-  padding-block: 2.222em;
   position: relative;
   font-size: 0.5625rem;
   font-weight: 700;
@@ -229,6 +240,10 @@ main .content .source a::after {
   letter-spacing: 0.214em;
   line-height: 1.1;
   color: var(--color-foreground-50);
+}
+.tabs li a {
+  display: inline-block;
+  padding-block: 2.222em;
 }
 .tabs li.selected {
   color: var(--color-foreground);

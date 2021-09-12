@@ -8,6 +8,8 @@ main {
   }
 
   figure {
+    --geology-image: url("../assets/geology-mercury.png");
+
     width: 19em;
     height: 19em;
     margin: 1.5em auto;
@@ -26,6 +28,18 @@ main {
       width: 38.4%;
       margin-left: 25%;
       transform: translateX(-50%);
+    }
+
+    &.geology::after {
+      content: "";
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      width: 24.4%;
+      height: 29.8%;
+      margin-left: -12.2%;
+      background: var(--geology-image) no-repeat center;
+      background-size: contain;
     }
   }
 

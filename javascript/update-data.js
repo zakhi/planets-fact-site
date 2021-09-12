@@ -17,4 +17,13 @@ export function updateData() {
     document.getElementById("planet-revolution").textContent = planetData.revolution
     document.getElementById("planet-radius").textContent = planetData.radius
     document.getElementById("planet-temperature").textContent = planetData.temperature
+
+    const figure = document.querySelector("main figure")
+
+    if (tab === "geology") {
+        figure.classList.add("geology")
+        figure.style.setProperty("--geology-image", `url(".${planetData.images.geology}")`)
+    } else {
+        figure.classList.remove("geology")
+    }
 }
