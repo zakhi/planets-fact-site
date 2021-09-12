@@ -1,0 +1,36 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 1.5em;
+  border-bottom: 1px solid var(--color-foreground-20);
+
+  .numeric, .elaborated {
+    display: none;
+  }
+
+  li {
+    padding-block: 2.222em;
+    position: relative;
+    font-size: 0.5625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.214em;
+    line-height: 1.1;
+    color: var(--color-foreground-50);
+
+    &.selected {
+      color: var(--color-foreground);
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        width: 100%;
+        height: 0.444em;
+        background: var(--color-primary);
+      }
+    }
+  }
+}
