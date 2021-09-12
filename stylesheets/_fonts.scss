@@ -1,0 +1,14 @@
+@mixin title {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+}
+
+@mixin text-regular {
+  font-family: "Spartan", sans-serif;
+  font-weight: 400;
+}
+
+@mixin text-bold {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
+}

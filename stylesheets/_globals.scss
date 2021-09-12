@@ -1,3 +1,5 @@
+@use "fonts";
+
 :root {
   --color-mercury: #419ebb;
   --color-venus: #eda249;
@@ -25,8 +27,7 @@
 }
 
 body {
-  font-family: "Spartan", sans-serif;
-  font-weight: 400;
+  @include fonts.text-regular;
   color: var(--color-foreground);
   background: url("../assets/background-stars.svg") var(--color-background);
   position: relative;
