@@ -1,9 +1,17 @@
 @use "fonts";
+@use "resolutions" as *;
 
 .facts {
   display: grid;
   gap: 0.5em;
   margin: 1.75em 1.5em 3em;
+
+  @include for-tablet {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6875em;
+    width: 100%;
+    margin: 1.75em auto 2.25em;
+  }
 
   li {
     border: 1px solid var(--color-foreground-20);
@@ -12,6 +20,13 @@
     align-items: center;
     text-transform: uppercase;
     padding: 0.8125em 1.5em;
+
+    @include for-tablet {
+      flex-direction: column;
+      align-items: start;
+      padding: 1em;
+      gap: 0.385em;
+    }
   }
 
   .title {
@@ -27,5 +42,10 @@
     font-size: 1.25rem;
     line-height: 1;
     letter-spacing: -0.0375em;
+
+    @include for-tablet {
+      font-size: 1.5em;
+      line-height: 1.3;
+    }
   }
 }

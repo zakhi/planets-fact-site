@@ -12,6 +12,7 @@
   --color-foreground-10: rgba(255, 255, 255, 0.1);
   --color-foreground-20: rgba(255, 255, 255, 0.2);
   --color-foreground-50: rgba(255, 255, 255, 0.5);
+  --color-foreground-75: rgba(255, 255, 255, 0.75);
   --color-hover: rgba(216, 216, 216, 0.2);
   --color-primary: var(--color-mercury);
 }
@@ -48,10 +49,20 @@ img {
 
 header {
   padding: 1em 1.5em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid var(--color-foreground-20);
+}
+@media (max-width: calc(48em - 1px)) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (min-width: 48em) {
+  header {
+    text-align: center;
+    padding: 2em 3.25em 1.625em;
+  }
 }
 header .title {
   font-family: "Antonio", sans-serif;
@@ -61,68 +72,88 @@ header .title {
   line-height: 1.286;
   letter-spacing: -0.0375em;
 }
-header nav {
-  cursor: pointer;
+@media (max-width: calc(48em - 1px)) {
+  header nav {
+    cursor: pointer;
+  }
+  header nav::after {
+    content: "";
+    display: block;
+    background: url("../assets/icon-hamburger.svg") no-repeat center;
+    background-size: contain;
+    width: 1.5em;
+    height: 2.25em;
+  }
+  header nav.open::after {
+    opacity: 25%;
+  }
+  header nav.open ul {
+    display: block;
+  }
+  header nav ul {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: calc(4.375em - 1px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5em;
+    background: var(--color-background);
+  }
+  header nav li {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    line-height: 1.67;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  header nav li + * {
+    border-top: 1px solid var(--color-foreground-10);
+  }
+  header nav li a {
+    display: block;
+    padding-block: 1.25em;
+  }
+  header nav li a::before {
+    content: "";
+    display: inline-block;
+    vertical-align: text-bottom;
+    border-radius: 50%;
+    background: white;
+    width: 1.333em;
+    height: 1.333em;
+    margin-right: 1.667em;
+  }
+  header nav li a::after {
+    content: "";
+    display: inline-block;
+    vertical-align: text-bottom;
+    background: url("../assets/icon-chevron.svg") no-repeat center;
+    position: absolute;
+    width: 0.4em;
+    height: 1.333em;
+    right: 0.533em;
+  }
 }
-header nav::after {
-  content: "";
-  display: block;
-  background: url("../assets/icon-hamburger.svg") no-repeat center;
-  background-size: contain;
-  width: 1.5em;
-  height: 2.25em;
-}
-header nav.open::after {
-  opacity: 25%;
-}
-header nav.open ul {
-  display: block;
-}
-header ul {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  top: calc(4.375em - 1px);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 1.5em;
-  background: var(--color-background);
-}
-header li {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  line-height: 1.67;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  position: relative;
-}
-header li + * {
-  border-top: 1px solid var(--color-foreground-10);
-}
-header li a {
-  display: block;
-  padding-block: 1.25em;
-}
-header li a::before {
-  content: "";
-  display: inline-block;
-  vertical-align: text-bottom;
-  border-radius: 50%;
-  background: white;
-  width: 1.333em;
-  height: 1.333em;
-  margin-right: 1.667em;
-}
-header li a::after {
-  content: "";
-  display: inline-block;
-  vertical-align: text-bottom;
-  background: url("../assets/icon-chevron.svg") no-repeat center;
-  position: absolute;
-  width: 0.4em;
-  height: 1.333em;
-  right: 0.533em;
+@media (min-width: 48em) {
+  header nav {
+    max-width: 41.6em;
+    margin-inline: auto;
+  }
+  header nav ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.5em;
+  }
+  header nav li {
+    font-family: "Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 0.6875em;
+    text-transform: uppercase;
+    color: var(--color-foreground-75);
+  }
 }
 header #mercury a::before {
   background: #def4fc;
@@ -151,17 +182,37 @@ header #neptune a::before {
 
 main {
   display: grid;
+  grid-template: "tabs" auto;
+}
+@media (min-width: 48em) {
+  main {
+    max-width: 43.0625em;
+    margin-inline: auto;
+    grid-template: "image image" auto "content tabs" auto "facts facts" auto/1fr 1fr;
+  }
 }
 main .tabs {
-  grid-row: 1/2;
+  grid-area: tabs;
+}
+@media (min-width: 48em) {
+  main .facts {
+    grid-area: facts;
+  }
 }
 main figure {
   --geology-image: url("../assets/geology-mercury.png");
   width: 19em;
   height: 19em;
-  margin: 1.5em auto;
+  margin-inline: auto;
   position: relative;
   overflow: hidden;
+}
+@media (min-width: 48em) {
+  main figure {
+    width: 28.75em;
+    height: 28.75em;
+    grid-area: image;
+  }
 }
 main figure .image-container {
   position: absolute;
@@ -175,6 +226,11 @@ main figure img {
   margin-left: 25%;
   transform: translateX(-50%);
 }
+@media (min-width: 48em) {
+  main figure img {
+    width: 63.363%;
+  }
+}
 main figure.geology::after {
   content: "";
   position: absolute;
@@ -187,9 +243,18 @@ main figure.geology::after {
   background-size: contain;
 }
 main .content {
-  text-align: center;
   max-width: 20.437em;
-  margin-inline: auto;
+}
+@media (max-width: calc(48em - 1px)) {
+  main .content {
+    text-align: center;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 48em) {
+  main .content {
+    max-width: 21.1875em;
+  }
 }
 main .content h1 {
   font-family: "Antonio", sans-serif;
@@ -197,10 +262,20 @@ main .content h1 {
   font-size: 2.5rem;
   text-transform: uppercase;
 }
+@media (min-width: 48em) {
+  main .content h1 {
+    font-size: 3rem;
+  }
+}
 main .content .description {
   font-size: 0.6875rem;
   margin-top: 1.454em;
   line-height: 2;
+}
+@media (min-width: 48em) {
+  main .content .description {
+    margin-top: 2.1818em;
+  }
 }
 main .content .source {
   font-size: 0.75rem;
@@ -229,40 +304,89 @@ main .content .source a::after {
   padding-inline: 1.5em;
   border-bottom: 1px solid var(--color-foreground-20);
 }
-.tabs .numeric, .tabs .elaborated {
-  display: none;
+@media (min-width: 48em) {
+  .tabs {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    padding: 0;
+    place-self: center right;
+  }
 }
 .tabs li {
+  font-family: "Spartan", sans-serif;
+  font-weight: 700;
   position: relative;
   font-size: 0.5625rem;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.214em;
   line-height: 1.1;
   color: var(--color-foreground-50);
 }
+@media (max-width: calc(48em - 1px)) {
+  .tabs li .numeric, .tabs li .elaborated {
+    display: none;
+  }
+}
+@media (min-width: 48em) {
+  .tabs li {
+    color: var(--color-foreground);
+    line-height: 2.777;
+    border: 1px solid var(--color-foreground-20);
+    width: 31.222em;
+  }
+  .tabs li:hover {
+    border-color: transparent;
+    background: var(--color-foreground-20);
+  }
+}
+.tabs li .numeric {
+  color: var(--color-foreground-50);
+  margin-inline: 2.222em 1.556em;
+}
 .tabs li a {
   display: inline-block;
+  width: 100%;
   padding-block: 2.222em;
 }
-.tabs li.selected {
-  color: var(--color-foreground);
+@media (min-width: 48em) {
+  .tabs li a {
+    padding-block: 0.778em;
+  }
 }
-.tabs li.selected::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 0.444em;
-  background: var(--color-primary);
+@media (max-width: calc(48em - 1px)) {
+  .tabs li.selected {
+    color: var(--color-foreground);
+  }
+  .tabs li.selected::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 0.444em;
+    background: var(--color-primary);
+  }
+}
+@media (min-width: 48em) {
+  .tabs li.selected {
+    background: var(--color-primary);
+  }
 }
 
 .facts {
   display: grid;
   gap: 0.5em;
   margin: 1.75em 1.5em 3em;
+}
+@media (min-width: 48em) {
+  .facts {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6875em;
+    width: 100%;
+    margin: 1.75em auto 2.25em;
+  }
 }
 .facts li {
   border: 1px solid var(--color-foreground-20);
@@ -271,6 +395,14 @@ main .content .source a::after {
   align-items: center;
   text-transform: uppercase;
   padding: 0.8125em 1.5em;
+}
+@media (min-width: 48em) {
+  .facts li {
+    flex-direction: column;
+    align-items: start;
+    padding: 1em;
+    gap: 0.385em;
+  }
 }
 .facts .title {
   font-family: "Spartan", sans-serif;
@@ -286,6 +418,12 @@ main .content .source a::after {
   font-size: 1.25rem;
   line-height: 1;
   letter-spacing: -0.0375em;
+}
+@media (min-width: 48em) {
+  .facts .value {
+    font-size: 1.5em;
+    line-height: 1.3;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

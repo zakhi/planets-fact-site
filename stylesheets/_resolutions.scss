@@ -1,0 +1,14 @@
+$-min-tablet-width: 48em;
+$-min-desktop-width: 78em;
+
+@mixin for-mobile-only {
+  @media (max-width: calc(#{$-min-tablet-width} - 1px)) {
+    @content
+  }
+}
+
+@mixin for-tablet {
+  @media (min-width: $-min-tablet-width) {
+    @content
+  }
+}

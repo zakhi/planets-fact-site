@@ -1,10 +1,28 @@
 @use "fonts";
+@use "resolutions" as *;
 
 main {
   display: grid;
+  grid-template: "tabs" auto;
+
+  @include for-tablet {
+    max-width: 43.0625em;
+    margin-inline: auto;
+    grid-template:
+      "image image" auto
+      "content tabs" auto
+      "facts facts" auto
+      / 1fr 1fr;
+  }
 
   .tabs {
-    grid-row: 1 / 2;
+    grid-area: tabs;
+  }
+
+  .facts {
+    @include for-tablet {
+      grid-area: facts;
+    }
   }
 
   figure {
@@ -12,9 +30,15 @@ main {
 
     width: 19em;
     height: 19em;
-    margin: 1.5em auto;
+    margin-inline: auto;
     position: relative;
     overflow: hidden;
+
+    @include for-tablet {
+      width: 28.75em;
+      height: 28.75em;
+      grid-area: image;
+    }
 
     .image-container {
       position: absolute;
@@ -28,6 +52,10 @@ main {
       width: 38.4%;
       margin-left: 25%;
       transform: translateX(-50%);
+
+      @include for-tablet {
+        width: 63.363%;
+      }
     }
 
     &.geology::after {
@@ -44,20 +72,35 @@ main {
   }
 
   .content {
-    text-align: center;
     max-width: 20.437em;
-    margin-inline: auto;
+
+    @include for-mobile-only {
+      text-align: center;
+      margin-inline: auto;
+    }
+
+    @include for-tablet {
+      max-width: 21.1875em;
+    }
 
     h1 {
       @include fonts.title;
       font-size: 2.5rem;
       text-transform: uppercase;
+
+      @include for-tablet {
+        font-size: 3rem;
+      }
     }
 
     .description {
       font-size: 0.6875rem;
       margin-top: 1.454em;
       line-height: 2;
+
+      @include for-tablet {
+        margin-top: 2.1818em;
+      }
     }
 
     .source {

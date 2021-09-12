@@ -1,11 +1,20 @@
 @use "fonts";
+@use "resolutions" as *;
 
 header {
   padding: 1em 1.5em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid var(--color-foreground-20);
+
+  @include for-mobile-only {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include for-tablet {
+    text-align: center;
+    padding: 2em 3.25em 1.625em;
+  }
 
   .title {
     @include fonts.title;
@@ -16,76 +25,96 @@ header {
   }
 
   nav {
-    cursor: pointer;
+    @include for-mobile-only {
+      cursor: pointer;
 
-    &::after {
-      content: "";
-      display: block;
-      background: url("../assets/icon-hamburger.svg") no-repeat center;
-      background-size: contain;
-      width: 1.5em;
-      height: 2.25em;
-    }
-
-    &.open {
       &::after {
-        opacity: 25%;
+        content: "";
+        display: block;
+        background: url("../assets/icon-hamburger.svg") no-repeat center;
+        background-size: contain;
+        width: 1.5em;
+        height: 2.25em;
+      }
+
+      &.open {
+        &::after {
+          opacity: 25%;
+        }
+
+        ul {
+          display: block;
+        }
       }
 
       ul {
-        display: block;
-      }
-    }
-  }
-
-  ul {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    top: calc(4.375em - 1px);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 1.5em;
-    background: var(--color-background);
-  }
-
-  li {
-    font-size: 0.9375rem;
-    font-weight: 700;
-    line-height: 1.67;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    position: relative;
-
-    & + * {
-      border-top: 1px solid var(--color-foreground-10);
-    }
-
-    a {
-      display: block;
-      padding-block: 1.25em;
-
-      &::before {
-        content: "";
-        display: inline-block;
-        vertical-align: text-bottom;
-        border-radius: 50%;
-        background: white;
-        width: 1.333em;
-        height: 1.333em;
-        margin-right: 1.667em;
-      }
-
-      &::after {
-        content: "";
-        display: inline-block;
-        vertical-align: text-bottom;
-        background: url("../assets/icon-chevron.svg") no-repeat center;
+        display: none;
         position: absolute;
-        width: 0.4em;
-        height: 1.333em;
-        right: 0.533em;
+        z-index: 1;
+        top: calc(4.375em - 1px);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1.5em;
+        background: var(--color-background);
+      }
+
+      li {
+        font-size: 0.9375rem;
+        font-weight: 700;
+        line-height: 1.67;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        position: relative;
+
+        & + * {
+          border-top: 1px solid var(--color-foreground-10);
+        }
+
+        a {
+          display: block;
+          padding-block: 1.25em;
+
+          &::before {
+            content: "";
+            display: inline-block;
+            vertical-align: text-bottom;
+            border-radius: 50%;
+            background: white;
+            width: 1.333em;
+            height: 1.333em;
+            margin-right: 1.667em;
+          }
+
+          &::after {
+            content: "";
+            display: inline-block;
+            vertical-align: text-bottom;
+            background: url("../assets/icon-chevron.svg") no-repeat center;
+            position: absolute;
+            width: 0.4em;
+            height: 1.333em;
+            right: 0.533em;
+          }
+        }
+      }
+    }
+
+    @include for-tablet {
+      max-width: 41.6em;
+      margin-inline: auto;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.5em;
+      }
+
+      li {
+        @include fonts.text-bold;
+        font-size: 0.6875em;
+        text-transform: uppercase;
+        color: var(--color-foreground-75);
       }
     }
   }
