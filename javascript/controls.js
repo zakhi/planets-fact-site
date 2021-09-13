@@ -6,6 +6,9 @@ document.querySelectorAll("nav a").forEach(planetLink => {
     planetLink.addEventListener("click", e => {
         e.preventDefault()
 
+        document.querySelector("nav .selected").classList.remove("selected")
+        planetLink.parentElement.classList.add("selected")
+
         document.body.dataset.planet = planet
         updateData()
     })

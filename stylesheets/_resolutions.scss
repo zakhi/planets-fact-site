@@ -12,3 +12,9 @@ $-min-desktop-width: 78em;
     @content
   }
 }
+
+@mixin for-desktop {
+  @media (min-width: $-min-desktop-width) {
+    @content
+  }
+}

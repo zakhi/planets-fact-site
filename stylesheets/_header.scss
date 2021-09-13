@@ -16,6 +16,13 @@ header {
     padding: 2em 3.25em 1.625em;
   }
 
+  @include for-desktop {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: end right;
+    padding: 0 2em 1.6875em;
+  }
+
   .title {
     @include fonts.title;
     font-size: 1.75em;
@@ -114,7 +121,37 @@ header {
         @include fonts.text-bold;
         font-size: 0.6875em;
         text-transform: uppercase;
+        letter-spacing: 0.0909em;
         color: var(--color-foreground-75);
+      }
+    }
+
+    @include for-desktop {
+      width: 100%;
+      margin-inline: 0;
+
+      ul {
+        margin-top: 0;
+      }
+
+      li {
+        line-height: 2.2727em;
+        padding-top: 3em;
+        position: relative;
+
+        &:hover, &:focus {
+          color: var(--color-foreground);
+        }
+
+        &.selected::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 0.444em;
+          background: var(--color-primary);
+        }
       }
     }
   }

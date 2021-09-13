@@ -64,6 +64,14 @@ header {
     padding: 2em 3.25em 1.625em;
   }
 }
+@media (min-width: 78em) {
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    place-items: end right;
+    padding: 0 2em 1.6875em;
+  }
+}
 header .title {
   font-family: "Antonio", sans-serif;
   font-weight: 500;
@@ -152,7 +160,34 @@ header .title {
     font-weight: 700;
     font-size: 0.6875em;
     text-transform: uppercase;
+    letter-spacing: 0.0909em;
     color: var(--color-foreground-75);
+  }
+}
+@media (min-width: 78em) {
+  header nav {
+    width: 100%;
+    margin-inline: 0;
+  }
+  header nav ul {
+    margin-top: 0;
+  }
+  header nav li {
+    line-height: 2.2727em;
+    padding-top: 3em;
+    position: relative;
+  }
+  header nav li:hover, header nav li:focus {
+    color: var(--color-foreground);
+  }
+  header nav li.selected::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.444em;
+    background: var(--color-primary);
   }
 }
 header #mercury a::before {
