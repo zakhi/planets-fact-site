@@ -1,12 +1,15 @@
 import { updateData } from "./update-data.js";
 
-document.querySelectorAll("nav a").forEach(planetLink => {
+const nav = document.querySelector("header nav");
+nav.addEventListener("click", _ => nav.classList.toggle("open"))
+
+nav.querySelectorAll("a").forEach(planetLink => {
     const planet = planetLink.parentElement.id
 
     planetLink.addEventListener("click", e => {
         e.preventDefault()
 
-        document.querySelector("nav .selected").classList.remove("selected")
+        nav.querySelector(".selected").classList.remove("selected")
         planetLink.parentElement.classList.add("selected")
 
         document.body.dataset.planet = planet
