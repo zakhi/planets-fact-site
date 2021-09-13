@@ -16,7 +16,6 @@
   --color-foreground-20: rgba(255, 255, 255, 0.2);
   --color-foreground-50: rgba(255, 255, 255, 0.5);
   --color-foreground-75: rgba(255, 255, 255, 0.75);
-  --color-hover: rgba(216, 216, 216, 0.2);
   --color-primary: var(--color-mercury);
 }
 
@@ -32,7 +31,6 @@ body {
   @include fonts.text-regular;
   color: var(--color-foreground);
   background: url("../assets/background-stars.svg") no-repeat center, var(--color-background);
-  position: relative;
 
   @include for-mobile-only {
     background-size: 61.7em auto;

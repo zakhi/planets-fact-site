@@ -13,7 +13,6 @@
   --color-foreground-20: rgba(255, 255, 255, 0.2);
   --color-foreground-50: rgba(255, 255, 255, 0.5);
   --color-foreground-75: rgba(255, 255, 255, 0.75);
-  --color-hover: rgba(216, 216, 216, 0.2);
   --color-primary: var(--color-mercury);
 }
 
@@ -30,7 +29,6 @@ body {
   font-weight: 400;
   color: var(--color-foreground);
   background: url("../assets/background-stars.svg") no-repeat center, var(--color-background);
-  position: relative;
 }
 @media (max-width: calc(48em - 1px)) {
   body {
@@ -135,7 +133,6 @@ header .title {
     display: inline-block;
     vertical-align: text-bottom;
     border-radius: 50%;
-    background: white;
     width: 1.333em;
     height: 1.333em;
     margin-right: 1.667em;
@@ -289,12 +286,10 @@ main figure .image-container {
   width: max-content;
   top: 50%;
   left: 50%;
-  transform: translate(-25%, -50%);
 }
 main figure img {
   width: 38.4%;
-  margin-left: 25%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 @media (min-width: 48em) {
   main figure img {
@@ -313,7 +308,7 @@ main figure.geology::after {
   left: 50%;
   width: 24.4%;
   height: 29.8%;
-  margin-left: -12.2%;
+  transform: translateX(-50%);
   background: var(--geology-image) no-repeat center;
   background-size: contain;
 }
@@ -391,10 +386,18 @@ main .content .source a::after {
   content: "";
   display: inline-block;
   background: url("../assets/icon-source.svg") no-repeat center;
-  width: 1em;
-  height: 1em;
+  width: 0.75rem;
+  height: 0.75rem;
   margin-left: 0.33em;
   margin-bottom: -0.3em;
+}
+@media (min-width: 78em) {
+  main .content .source a::after {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.57em;
+    margin-bottom: -0.2em;
+  }
 }
 
 .tabs {
