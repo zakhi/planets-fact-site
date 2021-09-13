@@ -11,7 +11,7 @@ export function updateData() {
     document.getElementById("planet-image").setAttribute("src", planetData.images[imageType])
 
     document.getElementById("planet-name").textContent = planetData.name
-    document.getElementById("planet-description").textContent = planetData[tab].content
+    document.getElementById("planet-description").textContent = planetData[tab].content.replace(/-/g, "\u2011")
     document.getElementById("planet-link").setAttribute("href", planetData[tab].source)
     document.getElementById("planet-rotation").textContent = planetData.rotation
     document.getElementById("planet-revolution").textContent = planetData.revolution

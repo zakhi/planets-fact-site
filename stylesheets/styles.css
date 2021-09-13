@@ -29,8 +29,14 @@ body {
   font-family: "Spartan", sans-serif;
   font-weight: 400;
   color: var(--color-foreground);
-  background: url("../assets/background-stars.svg") var(--color-background);
+  background: url("../assets/background-stars.svg") no-repeat center, var(--color-background);
   position: relative;
+}
+@media (max-width: calc(48em - 1px)) {
+  body {
+    background-size: 61.7em auto;
+    background-position-y: -5.45em;
+  }
 }
 
 ul {

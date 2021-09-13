@@ -1,4 +1,5 @@
 @use "fonts";
+@use "resolutions" as *;
 
 :root {
   --color-mercury: #419ebb;
@@ -30,8 +31,13 @@
 body {
   @include fonts.text-regular;
   color: var(--color-foreground);
-  background: url("../assets/background-stars.svg") var(--color-background);
+  background: url("../assets/background-stars.svg") no-repeat center, var(--color-background);
   position: relative;
+
+  @include for-mobile-only {
+    background-size: 61.7em auto;
+    background-position-y: -5.45em;
+  }
 }
 
 ul {
