@@ -15,13 +15,36 @@ main {
       / 1fr 1fr;
   }
 
+  @include for-desktop {
+    max-width: 70.5em;
+    margin-top: 4.375em;
+    grid-template:
+      "image content" 26.3125em
+      "image tabs" auto
+      "facts facts" auto
+      / 41.625em auto;
+    column-gap: 7em;
+  }
+
   .tabs {
     grid-area: tabs;
+
+    @include for-tablet {
+      place-self: center right;
+    }
+
+    @include for-desktop {
+      place-self: start stretch;
+    }
   }
 
   .facts {
     @include for-tablet {
       grid-area: facts;
+    }
+
+    @include for-desktop {
+      justify-self: end;
     }
   }
 
@@ -40,6 +63,11 @@ main {
       grid-area: image;
     }
 
+    @include for-desktop {
+      width: 41.625em;
+      height: 41.625em;
+    }
+
     .image-container {
       position: absolute;
       width: max-content;
@@ -55,6 +83,10 @@ main {
 
       @include for-tablet {
         width: 63.363%;
+      }
+
+      @include for-desktop {
+        width: 100%;
       }
     }
 
@@ -83,13 +115,23 @@ main {
       max-width: 21.1875em;
     }
 
+    @include for-desktop {
+      max-width: unset;
+      margin-top: 3.5em;
+    }
+
     h1 {
       @include fonts.title;
       font-size: 2.5rem;
+      line-height: 1;
       text-transform: uppercase;
 
       @include for-tablet {
         font-size: 3rem;
+      }
+
+      @include for-desktop {
+        font-size: 5rem;
       }
     }
 
@@ -101,6 +143,11 @@ main {
       @include for-tablet {
         margin-top: 2.1818em;
       }
+
+      @include for-desktop {
+        font-size: 0.875rem;
+        line-height: 1.7857em;
+      }
     }
 
     .source {
@@ -108,6 +155,11 @@ main {
       line-height: 2.083em;
       color: var(--color-foreground-50);
       margin-top: 2.667em;
+
+      @include for-desktop {
+        font-size: 0.875rem;
+        line-height: 1.7857em;
+      }
 
       a {
         @include fonts.text-bold;

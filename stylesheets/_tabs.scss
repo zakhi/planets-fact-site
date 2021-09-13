@@ -12,7 +12,6 @@
     justify-content: center;
     gap: 1em;
     padding: 0;
-    place-self: center right;
   }
 
   li {
@@ -42,9 +41,19 @@
       }
     }
 
+    @include for-desktop {
+      width: 100%;
+      font-size: 0.75rem;
+      line-height: 2.083em;
+    }
+
     .numeric {
       color: var(--color-foreground-50);
       margin-inline: 2.222em 1.556em;
+
+      @include for-desktop {
+        margin-inline: 2.33em;
+      }
     }
 
     a {
@@ -54,6 +63,10 @@
 
       @include for-tablet {
         padding-block: 0.778em;
+      }
+
+      @include for-desktop {
+        padding-block: 0.9166em;
       }
     }
 

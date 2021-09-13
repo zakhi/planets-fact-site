@@ -226,12 +226,35 @@ main {
     grid-template: "image image" auto "content tabs" auto "facts facts" auto/1fr 1fr;
   }
 }
+@media (min-width: 78em) {
+  main {
+    max-width: 70.5em;
+    margin-top: 4.375em;
+    grid-template: "image content" 26.3125em "image tabs" auto "facts facts" auto/41.625em auto;
+    column-gap: 7em;
+  }
+}
 main .tabs {
   grid-area: tabs;
 }
 @media (min-width: 48em) {
+  main .tabs {
+    place-self: center right;
+  }
+}
+@media (min-width: 78em) {
+  main .tabs {
+    place-self: start stretch;
+  }
+}
+@media (min-width: 48em) {
   main .facts {
     grid-area: facts;
+  }
+}
+@media (min-width: 78em) {
+  main .facts {
+    justify-self: end;
   }
 }
 main figure {
@@ -249,6 +272,12 @@ main figure {
     grid-area: image;
   }
 }
+@media (min-width: 78em) {
+  main figure {
+    width: 41.625em;
+    height: 41.625em;
+  }
+}
 main figure .image-container {
   position: absolute;
   width: max-content;
@@ -264,6 +293,11 @@ main figure img {
 @media (min-width: 48em) {
   main figure img {
     width: 63.363%;
+  }
+}
+@media (min-width: 78em) {
+  main figure img {
+    width: 100%;
   }
 }
 main figure.geology::after {
@@ -291,15 +325,27 @@ main .content {
     max-width: 21.1875em;
   }
 }
+@media (min-width: 78em) {
+  main .content {
+    max-width: unset;
+    margin-top: 3.5em;
+  }
+}
 main .content h1 {
   font-family: "Antonio", sans-serif;
   font-weight: 500;
   font-size: 2.5rem;
+  line-height: 1;
   text-transform: uppercase;
 }
 @media (min-width: 48em) {
   main .content h1 {
     font-size: 3rem;
+  }
+}
+@media (min-width: 78em) {
+  main .content h1 {
+    font-size: 5rem;
   }
 }
 main .content .description {
@@ -312,11 +358,23 @@ main .content .description {
     margin-top: 2.1818em;
   }
 }
+@media (min-width: 78em) {
+  main .content .description {
+    font-size: 0.875rem;
+    line-height: 1.7857em;
+  }
+}
 main .content .source {
   font-size: 0.75rem;
   line-height: 2.083em;
   color: var(--color-foreground-50);
   margin-top: 2.667em;
+}
+@media (min-width: 78em) {
+  main .content .source {
+    font-size: 0.875rem;
+    line-height: 1.7857em;
+  }
 }
 main .content .source a {
   font-family: "Spartan", sans-serif;
@@ -345,7 +403,6 @@ main .content .source a::after {
     justify-content: center;
     gap: 1em;
     padding: 0;
-    place-self: center right;
   }
 }
 .tabs li {
@@ -375,9 +432,21 @@ main .content .source a::after {
     background: var(--color-foreground-20);
   }
 }
+@media (min-width: 78em) {
+  .tabs li {
+    width: 100%;
+    font-size: 0.75rem;
+    line-height: 2.083em;
+  }
+}
 .tabs li .numeric {
   color: var(--color-foreground-50);
   margin-inline: 2.222em 1.556em;
+}
+@media (min-width: 78em) {
+  .tabs li .numeric {
+    margin-inline: 2.33em;
+  }
 }
 .tabs li a {
   display: inline-block;
@@ -387,6 +456,11 @@ main .content .source a::after {
 @media (min-width: 48em) {
   .tabs li a {
     padding-block: 0.778em;
+  }
+}
+@media (min-width: 78em) {
+  .tabs li a {
+    padding-block: 0.9166em;
   }
 }
 @media (max-width: calc(48em - 1px)) {
@@ -423,6 +497,13 @@ main .content .source a::after {
     margin: 1.75em auto 2.25em;
   }
 }
+@media (min-width: 78em) {
+  .facts {
+    max-width: 69.375em;
+    gap: 1.875em;
+    margin: 1.125em 0 3.5em;
+  }
+}
 .facts li {
   border: 1px solid var(--color-foreground-20);
   display: flex;
@@ -439,6 +520,12 @@ main .content .source a::after {
     gap: 0.385em;
   }
 }
+@media (min-width: 78em) {
+  .facts li {
+    gap: 0.25em;
+    padding: 1.25em 1.5em 1.6875em;
+  }
+}
 .facts .title {
   font-family: "Spartan", sans-serif;
   font-weight: 700;
@@ -446,6 +533,12 @@ main .content .source a::after {
   line-height: 2;
   letter-spacing: 0.09125em;
   color: var(--color-foreground-50);
+}
+@media (min-width: 78em) {
+  .facts .title {
+    font-size: 0.6875rem;
+    line-height: 2.2727em;
+  }
 }
 .facts .value {
   font-family: "Antonio", sans-serif;
@@ -458,6 +551,11 @@ main .content .source a::after {
   .facts .value {
     font-size: 1.5em;
     line-height: 1.3;
+  }
+}
+@media (min-width: 78em) {
+  .facts .value {
+    font-size: 2.5rem;
   }
 }
 
