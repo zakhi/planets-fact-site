@@ -1,4 +1,4 @@
-const data = await fetch("../data.json").then(response => response.json())
+const data = await fetch("./data.json").then(response => response.json())
 
 export function updateData() {
     const planet = document.body.dataset.planet
